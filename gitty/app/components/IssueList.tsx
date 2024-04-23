@@ -15,17 +15,17 @@ interface Issue {
   number: number;
   title: string;
   locked: boolean;
-  labels: {
-    name: string;
-    color: string;
-    default: boolean;
-    description: string;
-    id: number;
-    node_id: string;
-    url: string;
-  }[];
+  // labels: {
+  //   name: string;
+  //   color: string;
+  //   default: boolean;
+  //   description: string;
+  //   id: number;
+  //   node_id: string;
+  //   url: string;
+  // }[];
   created_at: string;
-  language: string;
+  // language: string;
 }
 
 export const IssueList = () => {
@@ -124,7 +124,7 @@ export const IssueList = () => {
             <p className='font-thin text-xs'>{issue.created_at}</p>
             <p className='text-xs'>
               <em>labels:</em>
-              {issue.labels.map((label, index) => (
+              {/* {issue.labels.map((label, index) => (
                 <span
                   key={index}
                   className='badge badge-outline text-xs text-white m-1'
@@ -132,9 +132,9 @@ export const IssueList = () => {
                 >
                   {label.name}
                 </span>
-              ))}
+              ))} */}
             </p>
-            <p className='text-xs'>lang: {issue.language}</p>
+            {/* <p className='text-xs'>lang: {issue.language}</p> */}
           </div>
         </div>
       ))}
