@@ -114,10 +114,14 @@ export const IssueList = () => {
   return (
     <div>
       {issues.map((issue) => (
-        <div key={issue.id} className='card w-full bg-base-100 border my-4'>
+        <div key={issue.id} className='card sm:w-full bg-base-100 border my-4'>
           <div className='card-body'>
             <h4 className='card-title'>
-              <a className='text-sm' href={issue.html_url} target='_blank'>
+              <a
+                className='text-sm md:text-base'
+                href={issue.html_url}
+                target='_blank'
+              >
                 {issue.title}
               </a>
             </h4>

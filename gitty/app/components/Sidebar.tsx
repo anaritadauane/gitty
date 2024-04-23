@@ -18,7 +18,7 @@ const Sidebar = () => {
           <div className='drawer-content p-10'>
             {/* Page content here */}
             <div className='flex justify-between'>
-              <h1 className='font-bold text-lg'>Issues</h1>
+              <h1 className='font-bold text-lg self-center'>Issues</h1>
               <label
                 htmlFor='my-drawer-2'
                 className='btn btn-primary rounded-full drawer-button lg:hidden'
@@ -78,7 +78,9 @@ const Sidebar = () => {
           <div className='drawer-content p-10'>
             {/* Page content here */}
             <div className='flex justify-between'>
-              <h1 className='font-bold text-lg'>Git Repositories</h1>
+              <h1 className='font-bold text-lg self-center'>
+                Git Repositories
+              </h1>
               <label
                 htmlFor='my-drawer-3'
                 className='btn btn-primary rounded-full drawer-button lg:hidden'
