@@ -2,7 +2,7 @@ import React from "react";
 
 export const AboutSection = () => {
   return (
-    <div className='font-RobotoMono bg-base-100 p-10 sm:p-6 border-b border-black'>
+    <div className='font-RobotoMono bg-base-100 p-10 sm:p-6'>
       <h1 className='font-bold font-RobotoMono text-xl sm:text-2xl'>About</h1>
       <p className='font-thin text-base sm:text-lg text-sm'>
         Gitty is a platform dedicated to empowering beginner developers to make

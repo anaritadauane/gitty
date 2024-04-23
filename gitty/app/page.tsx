@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import { AboutSection } from "./components/AboutSection";
 import Sidebar from "./components/Sidebar";
-import { RepoLists } from "./components/RepoLists";
+import { Footer } from "./components/Footer";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       <AboutSection />
       <Sidebar />
-      <RepoLists />
+      <Footer />
     </div>
   );
 }
