@@ -7,10 +7,13 @@ export const AboutSection = () => {
       <p className='font-thin text-base sm:text-lg text-sm'>
         Gitty is a platform dedicated to empowering beginner developers to make
         their first contributions to open-source projects with ease. Our mission
-        is to centralize and organize &quot;good first issues&quot; from a wide
-        range of GitHub repositories, making it simple for aspiring developers
-        to find meaningful opportunities to contribute to the open-source
-        community.
+        is to centralize and organize{" "}
+        <span className='badge badge-neutral'>
+          &quot;good first issues&quot;
+        </span>{" "}
+        from a wide range of GitHub repositories, making it simple for aspiring
+        developers to find meaningful opportunities to contribute to the
+        open-source community.
       </p>
       <br />
       <p className='text-xs font-thin'>

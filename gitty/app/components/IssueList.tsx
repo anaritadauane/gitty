@@ -4,6 +4,7 @@ import { Octokit } from "octokit";
 import { useEffect, useState } from "react";
 
 interface Issue {
+  created_at: string;
   url: string;
   repository_url: string;
   labels_url: string;
@@ -15,16 +16,15 @@ interface Issue {
   number: number;
   title: string;
   locked: boolean;
-  // labels: {
-  //   name: string;
-  //   color: string;
-  //   default: boolean;
-  //   description: string;
-  //   id: number;
-  //   node_id: string;
-  //   url: string;
-  // }[];
-  created_at: string;
+  labels: {
+    id?: number;
+    node_id?: string;
+    url?: string;
+    name?: string;
+    color?: string;
+    default?: boolean;
+    description?: string;
+  }[];
   // language: string;
 }
 
@@ -51,7 +51,7 @@ export const IssueList = () => {
       });
 
       // Function to divide date string into components with month name
-      const divideDateStringWithMonthName = (dateString: string) => {
+      const formatDate = (dateString: string) => {
         const months = [
           "January",
           "February",
@@ -98,13 +98,30 @@ export const IssueList = () => {
         }
       };
 
-      // Mapping the response data and dividing the created_at date string
-      const mappedIssues = response.data.items.map((issue: Issue) => ({
-        ...issue,
-        created_at: divideDateStringWithMonthName(issue.created_at),
+      const mappedIssues: Issue[] = response.data.items.map((item: any) => ({
+        created_at: formatDate(item.created_at),
+        url: item.url,
+        repository_url: item.repository_url,
+        labels_url: item.labels_url,
+        comments_url: item.comments_url,
+        events_url: item.events_url,
+        html_url: item.html_url,
+        id: item.id,
+        node_id: item.node_id,
+        number: item.number,
+        title: item.title,
+        locked: item.locked,
+        labels: item.labels.map((label: any) => ({
+          id: label.id,
+          node_id: label.node_id,
+          url: label.url,
+          name: label.name,
+          color: label.color,
+          default: label.default,
+          description: label.description,
+        })),
       }));
 
-      console.log(mappedIssues);
       setIssues(mappedIssues);
     };
 
@@ -128,17 +145,12 @@ export const IssueList = () => {
             <p className='font-thin text-xs'>{issue.created_at}</p>
             <p className='text-xs'>
               <em>labels:</em>
-              {/* {issue.labels.map((label, index) => (
-                <span
-                  key={index}
-                  className='badge badge-outline text-xs text-white m-1'
-                  style={{ backgroundColor: `#${label.color}` }}
-                >
+              {issue.labels.map((label, index) => (
+                <span key={index} className='badge badge-accent text-xs m-1'>
                   {label.name}
                 </span>
-              ))} */}
+              ))}
             </p>
-            {/* <p className='text-xs'>lang: {issue.language}</p> */}
           </div>
         </div>
       ))}

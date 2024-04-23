@@ -70,7 +70,6 @@ const Sidebar = () => {
         role='tab'
         className='tab bg-base-200 rounded-r-lg'
         aria-label='Projects'
-        checked
       />
       <div role='tabpanel' className='tab-content'>
         <div className='font-RobotoMono drawer lg:drawer-open' id='sidebar'>
