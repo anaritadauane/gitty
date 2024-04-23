@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className='navbar-end mx-auto text-right'>
         <input
           type='checkbox'
-          value='light'
+          value='lemonade'
           className='toggle theme-controller bg-base-400'
         />
       </div>
